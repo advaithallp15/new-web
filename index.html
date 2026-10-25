@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="description" content="A calm, private space for your daily dua reading habit." />
+    <title>Wird — a daily dua ritual</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#today" aria-label="Wird home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 42 42" fill="none"><path d="M27.8 6.6a15 15 0 1 0 8 26.1A16.5 16.5 0 0 1 27.8 6.6Z" fill="currentColor"/><path d="m28.8 10.7 1.4 3 3.3.4-2.4 2.3.6 3.3-2.9-1.6-2.9 1.6.6-3.3-2.4-2.3 3.3-.4 1.4-3Z" fill="#E8BD73"/></svg>
+          </span>
+          <span class="brand-copy"><strong>wird</strong><small>ورد · a daily ritual</small></span>
+        </a>
+
+        <div class="side-label">YOUR SPACE</div>
+        <nav class="nav-list">
+          <button class="nav-item active" data-view="today"><span class="nav-icon">◷</span><span>Today</span><span class="nav-arrow">›</span></button>
+          <button class="nav-item" data-view="history"><span class="nav-icon">▦</span><span>My history</span></button>
+          <button class="nav-item" data-view="rewards"><span class="nav-icon">✧</span><span>Milestones</span></button>
+          <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span><span>Settings</span></button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="quote-card">
+            <span class="quote-spark">✳</span>
+            <p>“Remember Me; I will remember you.”</p>
+            <small>Al-Baqarah 2:152</small>
+          </div>
+          <div class="profile-row">
+            <div class="avatar">و</div>
+            <div><strong>Your quiet space</strong><small>Just for you</small></div>
+            <span class="profile-dots">···</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div class="mobile-brand"><span class="mini-mark">☾</span> wird</div>
+          <div class="breadcrumb"><span>My space</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Today</strong></div>
+          <div class="topbar-actions">
+            <span class="privacy-pill"><span class="privacy-dot"></span> Private by design</span>
+            <button class="icon-button" id="open-settings" aria-label="Open settings" title="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.2 2.1-2 2-2.2-1.2a8 8 0 0 1-1.4.6l-.6 2.4h-2.9L11 18.6a8 8 0 0 1-1.4-.6L7.4 19.2l-2-2 1.2-2.1a8 8 0 0 1-.6-1.5l-2.4-.5v-2.9l2.4-.6a8 8 0 0 1 .6-1.4L5.4 8.4l2-2 2.1 1.2a8 8 0 0 1 1.5-.6l.5-2.4h2.9l.6 2.4a8 8 0 0 1 1.4.6l2.2-1.2 2 2-1.2 2.1c.3.5.5 1 .6 1.5l2.4.5v2.9l-2.4.6c-.1.4-.3.9-.6 1.4Z"/></svg></button>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="view active" id="view-today" aria-labelledby="page-title">
+            <div class="welcome-row">
+              <div>
+                <div class="eyebrow" id="today-date">A NEW DAY, A NEW BEGINNING</div>
+                <h1 id="page-title">Make room for remembrance<span class="title-period">.</span></h1>
+                <p class="page-subtitle">A few quiet minutes can bring the heart back to what matters.</p>
+              </div>
+              <div class="greeting-seal" aria-hidden="true"><span>ٱلْحَمْدُ لِلَّٰهِ</span><small>begin with gratitude</small></div>
+            </div>
+
+            <div class="dashboard-grid">
+              <div class="reader-column">
+                <section class="reader-card" aria-label="Daily reading">
+                  <div class="reader-topline">
+                    <div class="day-label"><span class="day-spark">✳</span><span id="chapter-kicker">YOUR DAILY WIRD</span></div>
+                    <button class="text-button" id="chapter-picker">Browse days <span>↗</span></button>
+                  </div>
+                  <div class="reader-heading-row">
+                    <div><div class="chapter-number" id="chapter-number">DAY 01 <span>OF 30</span></div><h2 id="chapter-title">A prayer for goodness</h2></div>
+                    <div class="chapter-progress"><span id="chapter-progress-label">1 / 3 duas</span><div class="progress-track"><span id="chapter-progress-bar"></span></div></div>
+                  </div>
+                  <div class="content-note" id="content-note"><span>ⓘ</span><span>Preview selection · not verified against your edition of <em>Mukhtasar Hizb ul Azam</em>. Add verified chapters in Settings.</span></div>
+
+                  <div class="dua-card" id="dua-card">
+                    <div class="dua-meta"><span class="dua-count" id="dua-count">DUA 01 — 03</span><span class="source-tag" id="dua-source">QUR'AN · 2:201</span></div>
+                    <h3 id="dua-title">For goodness in both worlds</h3>
+                    <div class="arabic-wrap" dir="rtl"><p class="arabic-text" id="dua-arabic" lang="ar"></p></div>
+                    <div class="dua-translation" id="translation-block">
+                      <div class="translation-heading"><span id="translation-label">ENGLISH MEANING</span><button class="language-toggle" id="language-toggle" aria-label="Switch translation language">اردو <span>↗</span></button></div>
+                      <p id="dua-translation"></p>
+                    </div>
+                    <details class="transliteration-details" id="transliteration-details"><summary>Show transliteration</summary><p id="dua-transliteration"></p></details>
+                    <div class="dua-footer">
+                      <button class="round-arrow" id="prev-dua" aria-label="Previous dua" title="Previous dua">←</button>
+                      <div class="dua-dots" id="dua-dots" aria-label="Dua position"></div>
+                      <button class="round-arrow" id="next-dua" aria-label="Next dua" title="Next dua">→</button>
+                    </div>
+                  </div>
+
+                  <div class="reader-actions">
+                    <button class="button button-primary" id="mark-read"><span class="check-icon">✓</span><span id="mark-read-label">Mark this day as read</span></button>
+                    <div class="read-status" id="read-status"><span class="status-dot"></span><span>Small steps, sincerely made.</span></div>
+                  </div>
+                  <div class="chapter-navigation">
+                    <button id="prev-chapter" class="chapter-nav-button" aria-label="Previous day"><span>←</span><span><small>PREVIOUS</small><strong>Day <b id="prev-day-number">30</b></strong></span></button>
+                    <div class="chapter-nav-center"><span class="nav-dots">···</span><button id="open-day-list">All 30 days</button><span class="nav-dots">···</span></div>
+                    <button id="next-chapter" class="chapter-nav-button next" aria-label="Next day"><span><small>NEXT</small><strong>Day <b id="next-day-number">02</b></strong></span><span>→</span></button>
+                  </div>
+                </section>
+
+                <section class="days-strip" aria-label="Choose a day">
+                  <div class="section-title-row"><div><span class="eyebrow">YOUR READING PATH</span><h2>One day at a time</h2></div><button class="subtle-link" id="days-strip-link">See all days <span>→</span></button></div>
+                  <div class="days-list" id="days-list"></div>
+                </section>
+              </div>
+
+              <aside class="insights-column" aria-label="Reading progress">
+                <section class="streak-card">
+                  <div class="streak-head"><div><span class="eyebrow light-eyebrow">YOUR RHYTHM</span><h2>Keep showing up</h2></div><span class="flame">✦</span></div>
+                  <div class="streak-number-row"><strong id="streak-number">0</strong><div><b>day streak</b><small>Every return is a beginning.</small></div></div>
+                  <div class="week-row" id="week-row" aria-label="This week's reading"></div>
+                  <div class="week-caption"><span id="week-summary">0 of 7 days this week</span><span class="week-legend"><i></i> read</span></div>
+                  <div class="streak-divider"></div>
+                  <div class="next-goal"><div class="goal-icon">✧</div><div class="goal-copy"><strong id="next-goal-title">Your first step</strong><span id="next-goal-copy">Read once to begin your streak.</span><div class="goal-track"><span id="next-goal-bar"></span></div></div><span class="goal-count" id="next-goal-count">0/3</span></div>
+                </section>
+
+                <section class="month-card">
+                  <div class="month-head"><div><span class="eyebrow">A LITTLE PERSPECTIVE</span><h2>Reading days</h2></div><button class="more-button" data-view="history" aria-label="View full history">···</button></div>
+                  <div class="month-stat"><strong id="month-read-count">0</strong><span>days read<br/>this month</span><div class="month-icon">◌</div></div>
+                  <div class="mini-calendar" id="mini-calendar" aria-label="Monthly reading calendar"></div>
+                  <div class="calendar-legend"><span><i class="legend-read"></i> read</span><span><i class="legend-today"></i> today</span></div>
+                </section>
+
+                <section class="encouragement-card"><span class="encouragement-icon">✳</span><p>“The most beloved deeds to Allah are those that are consistent, even if small.”</p><small>Prophetic tradition · Sahih al-Bukhari</small></section>
+              </aside>
+            </div>
+            <footer class="page-footer"><span>Made for mindful moments</span><span>☾ &nbsp; May your day be full of barakah</span></footer>
+          </section>
+
+          <section class="view secondary-view" id="view-history" aria-labelledby="history-title">
+            <div class="secondary-heading"><div><span class="eyebrow">YOUR JOURNEY, AT YOUR PACE</span><h1 id="history-title">A history of showing up<span class="title-period">.</span></h1><p class="page-subtitle">Every mark is a moment you made time for remembrance.</p></div><div class="date-stamp" id="history-today"></div></div>
+            <div class="summary-cards" id="history-summary"></div>
+            <section class="panel history-panel"><div class="section-title-row"><div><span class="eyebrow">YOUR CONSISTENCY</span><h2 id="history-period-title">This week</h2></div><div class="segmented-control" role="tablist" aria-label="History period"><button class="period-button active" data-period="week">Week</button><button class="period-button" data-period="month">Month</button><button class="period-button" data-period="year">Year</button></div></div><div id="history-chart" class="history-chart"></div><div class="chart-footnote" id="history-chart-note"></div></section>
+            <div class="history-bottom-grid"><section class="panel calendar-panel"><div class="section-title-row"><div><span class="eyebrow">YOUR DAYS</span><h2 id="history-calendar-title">This month</h2></div><div class="calendar-controls"><button id="calendar-prev" aria-label="Previous month">‹</button><button id="calendar-next" aria-label="Next month">›</button></div></div><div class="large-calendar" id="large-calendar"></div></section><section class="panel history-note-panel"><div class="note-art">✧</div><span class="eyebrow">A GENTLE REMINDER</span><h2>Progress isn’t a straight line.</h2><p>Missed a day? You haven’t lost your progress. Begin again whenever you’re ready, with no guilt and no rush.</p><button class="button button-secondary" data-nav-view="today">Return to today <span>→</span></button></section></div>
+          </section>
+
+          <section class="view secondary-view" id="view-rewards" aria-labelledby="rewards-title">
+            <div class="secondary-heading"><div><span class="eyebrow">MILESTONES, NOT PRESSURE</span><h1 id="rewards-title">Celebrate the little things<span class="title-period">.</span></h1><p class="page-subtitle">A gentle nudge to keep your daily habit feeling rewarding.</p></div><div class="rewards-orbit">✧</div></div>
+            <section class="reward-hero"><div><span class="eyebrow light-eyebrow">YOUR CURRENT STREAK</span><div class="reward-streak"><strong id="reward-streak-count">0</strong><span>days<br/>in a row</span></div><p id="reward-hero-copy">Your first reading is waiting whenever you are.</p></div><div class="reward-flower" aria-hidden="true">✳</div></section>
+            <div class="section-title-row rewards-title-row"><div><span class="eyebrow">REWARDS ALONG THE WAY</span><h2>Every return counts</h2></div><span class="unlocked-count" id="unlocked-count">0 earned</span></div><div class="rewards-grid" id="rewards-grid"></div>
+          </section>
+
+          <section class="view secondary-view" id="view-settings" aria-labelledby="settings-title">
+            <div class="secondary-heading"><div><span class="eyebrow">YOUR SPACE, YOUR WAY</span><h1>Settings<span class="title-period">.</span></h1><p class="page-subtitle">Your reading data stays in this browser, on this device.</p></div><div class="privacy-stamp"><span>◈</span><small>LOCAL<br/>ONLY</small></div></div>
+            <div class="settings-grid">
+              <section class="panel setting-panel"><div class="setting-icon">▤</div><div class="setting-copy"><span class="eyebrow">READING CONTENT</span><h2>Bring in your verified chapters</h2><p>This preview includes a small selection of Qur'anic duas, not the text of <em>Mukhtasar Hizb ul Azam</em>. Import a JSON file with the Arabic and Urdu text from your own verified edition to populate the 30-day path.</p><div class="setting-actions"><label class="button button-primary import-label" for="chapter-upload">Import chapters <span>↑</span></label><input id="chapter-upload" type="file" accept=".json,application/json" /><button class="button button-secondary" id="download-template">Download JSON template <span>↓</span></button></div><p class="import-feedback" id="import-feedback" aria-live="polite"></p></div></section>
+              <section class="panel setting-panel"><div class="setting-icon">◷</div><div class="setting-copy"><span class="eyebrow">YOUR DATA</span><h2>Keep your progress with you</h2><p>Reading history and imported chapters are saved only in your browser's local storage. Export a backup or clear this browser's data whenever you choose.</p><div class="setting-actions"><button class="button button-secondary" id="export-data">Export my data <span>↓</span></button><button class="button button-quiet" id="clear-data">Clear local data</button></div></div></section>
+              <section class="panel setting-panel reminder-panel"><div class="setting-icon">♧</div><div class="setting-copy"><span class="eyebrow">A SOFT NUDGE</span><h2>A reminder, on your terms</h2><p>Choose whether the app should remember your reminder preference. This static preview does not send notifications.</p><label class="toggle-row"><span><strong>Daily reminder preference</strong><small id="reminder-status">Off</small></span><input type="checkbox" id="reminder-toggle" /><span class="toggle-ui"></span></label></div></section>
+            </div>
+            <div class="content-integrity"><span>ⓘ</span><p><strong>Text integrity matters.</strong> Please compare imported Arabic and Urdu against a trusted copy before reading. This app does not claim its sample duas are a verified transcription of the named book.</p></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal-backdrop" id="day-modal" hidden><div class="day-modal-card" role="dialog" aria-modal="true" aria-labelledby="day-modal-title"><div class="modal-top"><div><span class="eyebrow">THE 30-DAY PATH</span><h2 id="day-modal-title">Choose a day</h2></div><button class="modal-close" id="close-day-modal" aria-label="Close">×</button></div><p class="modal-copy">Move through the chapters at your own pace. Days without imported text are shown as empty.</p><div class="modal-day-grid" id="modal-day-grid"></div></div></div>
+  </body>
+</html>
